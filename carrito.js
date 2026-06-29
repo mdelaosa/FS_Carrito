@@ -59,9 +59,6 @@ let carrito;
 
 async function init(){
     const response = await fetch(API_URL);
-    if (!response.ok) {
-        throw new Error('Error al cargar los productos.');
-    }
     const data = await response.json();
     carrito = new Carrito(data.products, data.currency);
 
